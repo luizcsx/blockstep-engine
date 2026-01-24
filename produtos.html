@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Produtos | Block-Step Engine</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: Verdana, Geneva, sans-serif; 
+            background-color: #fff; 
+            color: #555;  
+            font-size: 13px;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+      
+        .grid-container {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .top-utility {
+            background-color: #444;
+            color: #ddd;
+            font-size: 11px;
+            padding: 6px 0;
+            width: 100%;
+        }
+        .top-utility-flex {
+            display: flex;
+            justify-content: flex-end;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+        }
+        .logo {
+            font-size: 28px;
+            color: #777;
+            font-weight: 500;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+        .logo span { color: #b74d4d; font-weight: 700; }
+        
+        .search-box input {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            width: 220px;
+            outline: none;
+            font-size: 12px;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            border-bottom: 1px solid #e5e5e5;
+            width: 100%;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links a {
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #666;
+            border-right: 1px solid #e5e5e5;
+            display: block;
+            white-space: nowrap;
+        }
+        .nav-links a:hover { background-color: #fff; color: #000; }
+
+        .products-header {
+            margin: 40px 0 30px 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        .products-header h2 { font-size: 26px; color: #333; font-weight: normal; }
+
+        /* GRID DE PRODUTOS */
+        .products-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .product-item {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .product-preview {
+            width: 240px;
+            height: 150px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 11px;
+            text-transform: uppercase;
+            background-image: linear-gradient(45deg, #f9f9f9 25%, transparent 25%, transparent 50%, #f9f9f9 50%, #f9f9f9 75%, transparent 75%, transparent);
+            background-size: 20px 20px;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            color: #b74d4d;
+            margin-bottom: 10px;
+        }
+        .product-info p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .product-info .tag {
+            font-size: 10px;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            border-top: 1px solid #e5e5e5;
+            padding: 30px 0;
+            color: #888;
+            font-size: 11px;
+        }
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links a { color: #666; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; color: #0067b8; }
+
+        /* MOBILE FIXES */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .product-item { flex-direction: column; align-items: center; text-align: center; }
+            .product-preview { width: 100%; max-width: 350px; }
+            .footer-flex { flex-direction: column; gap: 15px; }
+            .nav-links { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-utility">
+        <div class="top-utility-flex">Idioma: Português (Brasil)</div>
+    </div>
+
+    <div class="grid-container">
+        <header>
+            <a href="index.html" class="logo">Block-Step <span>Engine</span></a>
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar produtos...">
+            </div>
+        </header>
+    </div>
+
+    <nav>
+        <div class="grid-container">
+            <ul class="nav-links">
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="#">Aprendizado</a></li>
+                <li><a href="#">Programação</a></li>
+                <li><a href="#">Matemática</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="grid-container">
+        <div class="products-header">
+            <h2>Nossos Produtos</h2>
+        </div>
+
+        <main class="products-list">
+            
+            <div class="product-item">
+                <div class="product-preview">Preview do Studio</div>
+                <div class="product-info">
+                    <span class="tag">SOFTWARE</span>
+                    <h3>Block-Step Studio</h3>
+                    <p>O ambiente oficial de desenvolvimento para a engine. Inclui ferramentas de depuração de blocos e visualização em tempo real de geometria espacial.</p>
+                    <a href="downloads.html" style="color: #0067b8; text-decoration: none; font-weight: bold;">Saiba mais ></a>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-preview">Preview do Web Runner</div>
+                <div class="product-info">
+                    <span class="tag">WEB</span>
+                    <h3>Block-Step Web Runner</h3>
+                    <p>Execute seus módulos diretamente no navegador. Leve, rápido e compatível com as principais bibliotecas de lógica matemática do mercado.</p>
+                    <a href="#" style="color: #0067b8; text-decoration: none; font-weight: bold;">Ver demonstração ></a>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-preview">Preview do Módulo Pro</div>
+                <div class="product-info">
+                    <span class="tag">EXTENSÃO</span>
+                    <h3>Pacote de Geometria Avançada</h3>
+                    <p>Coleção de blocos especializados para cálculos de superfícies complexas e renderização de objetos tridimensionais dinâmicos.</p>
+                    <a href="#" style="color: #0067b8; text-decoration: none; font-weight: bold;">Ver documentação ></a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="grid-container">
+            <div class="footer-flex">
+                <div class="footer-links">
+                    <a href="mailto:contato.luiz404@gmail.com">Contate-nos</a> <span>|</span>
+                    <a href="privacidade.html">Privacidade</a> <span>|</span>
+                    <a href="#">Termos de Uso</a> <span>|</span>
+                    <a href="#">Marcas Registradas</a>
+                </div>
+                <div>© 2026 Block-Step Engine.</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

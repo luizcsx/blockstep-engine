@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacidade | Block-Step Engine</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: Verdana, Geneva, sans-serif; 
+            background-color: #fff; 
+            color: #555;  
+            font-size: 13px;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+      
+        .grid-container {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .top-utility {
+            background-color: #444;
+            color: #ddd;
+            font-size: 11px;
+            padding: 6px 0;
+            width: 100%;
+        }
+        .top-utility-flex {
+            display: flex;
+            justify-content: flex-end;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+        }
+        .logo {
+            font-size: 28px;
+            color: #777;
+            font-weight: 500;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+        .logo span { color: #b74d4d; font-weight: 700; }
+        
+        .search-box input {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            width: 220px;
+            outline: none;
+            font-size: 12px;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            border-bottom: 1px solid #e5e5e5;
+            width: 100%;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links a {
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #666;
+            border-right: 1px solid #e5e5e5;
+            display: block;
+            white-space: nowrap;
+        }
+        .nav-links a:hover { background-color: #fff; color: #000; }
+
+        .content-area {
+            margin: 40px 0 80px 0;
+            min-height: 500px;
+        }
+        .content-area h2 {
+            font-size: 26px;
+            color: #333;
+            font-weight: normal;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .content-area h3 {
+            font-size: 17px;
+            color: #b74d4d;
+            margin: 30px 0 15px 0;
+            font-weight: bold;
+        }
+        .content-area p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .content-area ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .content-area li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            border-top: 1px solid #e5e5e5;
+            padding: 30px 0;
+            color: #888;
+            font-size: 11px;
+        }
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+        }
+        .footer-links a:hover { text-decoration: underline; color: #0067b8; }
+        .footer-links span { color: #ccc; margin: 0 5px; }
+
+        @media (max-width: 850px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .footer-flex { flex-direction: column; text-align: center; gap: 15px; }
+            .nav-links { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-utility">
+        <div class="top-utility-flex">
+            Idioma: Português (Brasil)
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <header>
+            <a href="index.html" class="logo">Block-Step <span>Engine</span></a>
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar no site...">
+            </div>
+        </header>
+    </div>
+
+    <nav>
+        <div class="grid-container">
+            <ul class="nav-links">
+                <li><a href="#">Produtos</a></li>
+                <li><a href="aprendizado.html">Aprendizado</a></li>
+                <li><a href="#">Programação</a></li>
+                <li><a href="#">Matemática</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="grid-container">
+        <main class="content-area">
+            <h2>Política de Privacidade</h2>
+            
+            <p>Sua privacidade é fundamental para a <strong>Block-Step Engine</strong>. Esta declaração de privacidade explica quais dados pessoais coletamos e como os utilizamos para garantir a melhor experiência educacional possível.</p>
+
+            <h3>Coleta de Informações</h3>
+            <p>Para o funcionamento da nossa engine de blocos e sistemas de geometria, poderemos processar as seguintes informações:</p>
+            <ul>
+                <li>Dados técnicos de navegação (resolução de tela e navegador);</li>
+                <li>Logs de erro para melhoria da lógica de programação;</li>
+                <li>Interações realizadas dentro dos módulos de aprendizado.</li>
+            </ul>
+
+            <h3>Uso dos Dados</h3>
+            <p>A <strong>Block-Step Engine</strong> utiliza as informações coletadas para operar, manter e fornecer os recursos e funcionalidades da plataforma. Os dados nos ajudam a entender quais áreas da matemática e programação são mais acessadas, permitindo a criação de novos conteúdos didáticos.</p>
+
+            <h3>Cookies e Tecnologias de Rastreamento</h3>
+            <p>Utilizamos cookies estritamente necessários para salvar suas preferências de idioma e garantir que sua sessão de estudos não seja interrompida. Esses dados não são compartilhados com empresas de publicidade ou terceiros.</p>
+
+            <h3>Segurança dos Dados</h3>
+            <p>Implementamos medidas de segurança técnicas para proteger suas informações contra acesso não autorizado ou alteração. Como este é um ambiente de aprendizado, recomendamos que você nunca compartilhe sua senha de acesso com outros usuários.</p>
+        </main>
+    </div>
+
+    <footer>
+        <div class="grid-container">
+            <div class="footer-flex">
+                <div class="footer-links">
+                    <a href="mailto:contato.luiz404@gmail.com">Contate-nos</a> <span>|</span>
+                    <a href="privacidade.html">Privacidade</a> <span>|</span>
+                    <a href="#">Termos de Uso</a> <span>|</span>
+                    <a href="#">Marcas Registradas</a>
+                </div>
+                <div>
+                    © 2026 Block-Step Engine.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

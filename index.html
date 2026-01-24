@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Block-Step Engine</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif; 
+            background-color: #fff; 
+            color: #555;  
+            font-size: 13px;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+      
+        .grid-container {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .top-utility {
+            background-color: #444;
+            color: #ddd;
+            font-size: 11px;
+            padding: 6px 0;
+            width: 100%;
+        }
+        .top-utility-flex {
+            display: flex;
+            justify-content: flex-end;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+        }
+        .logo {
+            font-size: 28px;
+            color: #777;
+            font-weight: 500;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+        .logo span { color: #b74d4d; font-weight: 700; }
+        
+        .search-box input {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            width: 220px;
+            outline: none;
+            font-size: 12px;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            border-bottom: 1px solid #e5e5e5;
+            width: 100%;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links a {
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #666;
+            border-right: 1px solid #e5e5e5;
+            display: block;
+            white-space: nowrap;
+        }
+        .nav-links a:hover { background-color: #fff; color: #000; }
+
+        .hero {
+            background: linear-gradient(to right, #fcfcfc, #f5f5f5);
+            border: 1px solid #e5e5e5;
+            margin: 25px 0;
+            padding: 45px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+      
+        .hero-content { flex: 1; }
+        .hero-content h2 { 
+            font-size: 32px; 
+            color: #333; 
+            font-weight: 300; 
+            margin-bottom: 15px; 
+        }
+        .hero-content p { font-size: 15px; margin-bottom: 25px; max-width: 500px; }
+
+        .btn-ms {
+            background-color: #eee;
+            border: 1px solid #ccc;
+            padding: 10px 25px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .btn-ms:after { content: " >"; color: #b74d4d; }
+        .btn-ms:hover { background-color: #e5e5e5; }
+
+        .hero-preview {
+            width: 320px;
+            height: 200px;
+            background-color: #e1f5fe;
+            border: 1px solid #b3e5fc;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .main-grid h3 {
+            font-size: 18px;
+            color: #333;
+            font-weight: 400;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .main-grid ul { list-style: none; }
+        .main-grid li { margin-bottom: 12px; }
+        .main-grid a { color: #0067b8; text-decoration: none; }
+        .main-grid a:hover { text-decoration: underline; }
+
+        footer {
+            background-color: #f2f2f2;
+            border-top: 1px solid #e5e5e5;
+            padding: 30px 0;
+            color: #888;
+            font-size: 11px;
+        }
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+        }
+        .footer-links a:hover { text-decoration: underline; color: #0067b8; }
+        .footer-links span { color: #ccc; margin: 0 5px; }
+
+        @media (max-width: 850px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .search-box { width: 100%; }
+            .search-box input { width: 100%; }
+            
+            .hero { flex-direction: column; text-align: center; padding: 25px; }
+            .hero-preview { width: 100%; height: 160px; order: -1; }
+            
+            .main-grid { grid-template-columns: 1fr; gap: 30px; }
+            
+            .footer-flex { flex-direction: column; text-align: center; gap: 15px; }
+            .nav-links { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-utility">
+        <div class="top-utility-flex">
+            Brasil (Português) | Entrar
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <header>
+            <a href="index.html" class="logo">Block-Step <span>Engine</span></a>
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar no site...">
+            </div>
+        </header>
+    </div>
+
+    <nav>
+        <div class="grid-container">
+            <ul class="nav-links">
+                <li><a href="#">Produtos</a></li>
+                <li><a href="aprendizado.html">Aprendizado</a></li>
+                <li><a href="#">Programação</a></li>
+                <li><a href="#">Matemática</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="grid-container">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Experimente a lógica de blocos</h2>
+                <p>A plataforma online para explorar os fundamentos da computação e geometria espacial de forma prática.</p>
+                <a href="#" class="btn-ms">Começar agora</a>
+            </div>
+            <div class="hero-preview"></div>
+        </section>
+
+        <main class="main-grid">
+            <div class="col">
+                <h3>Suporte ao Aluno</h3>
+                <ul>
+                    <li><a href="#">Como criar seu primeiro bloco</a></li>
+                    <li><a href="#">Guia de lógica booleana</a></li>
+                    <li><a href="#">Solução de problemas comuns</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Downloads Populares</h3>
+                <ul>
+                    <li><a href="#">Módulo de Geometria v1.2</a></li>
+                    <li><a href="#">Kit de Documentação Alpha</a></li>
+                    <li><a href="#">Exemplos de Códigos Fonte</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Últimas Novidades</h3>
+                <p>Lançamos o <strong>Block-Step Engine</strong>, uma plataforma sobre matemática, programação, aprendizagem, entre outros.</p>
+                <a href="#" style="font-size: 11px; margin-top: 10px; display: block;">Ver todas as novidades</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="grid-container">
+            <div class="footer-flex">
+                <div class="footer-links">
+                    <a href="malito:contato.luiz404@gmail.com">Contate-nos</a> <span>|</span>
+                    <a href="#">Privacidade</a> <span>|</span>
+                    <a href="#">Termos de Uso</a> <span>|</span>
+                    <a href="#">Marcas Registradas</a>
+                </div>
+                <div>
+                    © 2026 Block-Step Engine.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

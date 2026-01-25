@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Termos de Uso | Block-Step Engine</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: Verdana, Geneva, sans-serif; 
+            background-color: #fff; 
+            color: #555;  
+            font-size: 13px;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+      
+        .grid-container {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .top-utility {
+            background-color: #444;
+            color: #ddd;
+            font-size: 11px;
+            padding: 6px 0;
+            width: 100%;
+        }
+        .top-utility-flex {
+            display: flex;
+            justify-content: flex-end;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+        }
+        .logo {
+            font-size: 28px;
+            color: #777;
+            font-weight: 500;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+        .logo span { color: #b74d4d; font-weight: 700; }
+        
+        .search-box input {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            width: 220px;
+            outline: none;
+            font-size: 12px;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            border-bottom: 1px solid #e5e5e5;
+            width: 100%;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links a {
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #666;
+            border-right: 1px solid #e5e5e5;
+            display: block;
+            white-space: nowrap;
+        }
+        .nav-links a:hover { background-color: #fff; color: #000; }
+
+        /* CONTEÚDO EXPANDIDO */
+        .content-area {
+            padding: 40px 0 80px 0;
+        }
+        .termos-box {
+            border: 1px solid #e5e5e5;
+            padding: 50px;
+            background-color: #fcfcfc;
+            line-height: 1.6;
+        }
+        .termos-box h2 { 
+            font-size: 26px; 
+            color: #222; 
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .last-update {
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .termos-box h3 { 
+            font-size: 14px; 
+            color: #333; 
+            margin: 30px 0 10px 0; 
+            border-left: 4px solid #b74d4d;
+            padding-left: 10px;
+            background: #f4f4f4;
+        }
+        .termos-box p { margin-bottom: 15px; text-align: justify; }
+        .termos-box ul { margin: 15px 0 25px 30px; }
+        .termos-box li { margin-bottom: 12px; }
+        .proibido { color: #b74d4d; font-weight: bold; }
+
+        footer {
+            background-color: #f2f2f2;
+            border-top: 1px solid #e5e5e5;
+            padding: 30px 0;
+            color: #888;
+            font-size: 11px;
+        }
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links a { color: #666; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; color: #0067b8; }
+        .footer-links span { color: #ccc; margin: 0 5px; }
+
+        @media (max-width: 850px) {
+            header, .footer-flex { flex-direction: column; text-align: center; gap: 15px; }
+            .termos-box { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-utility">
+        <div class="top-utility-flex">Idioma: Português (Brasil)</div>
+    </div>
+
+    <div class="grid-container">
+        <header>
+            <a href="index.html" class="logo">Block-Step <span>Engine</span></a>
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar no site...">
+            </div>
+        </header>
+    </div>
+
+    <nav>
+        <div class="grid-container">
+            <ul class="nav-links">
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="aprendizado.html">Aprendizado</a></li>
+                <li><a href="programacao.html">Programação</a></li>
+                <li><a href="matematica.html">Matemática</a></li>
+                <li><a href="info.html">Sobre</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="grid-container">
+        <main class="content-area">
+            <div class="termos-box">
+                <h2>Termos e Condições de Uso</h2>
+                <p class="last-update">ESTABELECIDO EM 25 DE JANEIRO DE 2026 POR SHINEMAKER</p>
+
+                <p>Bem-vindo à <strong>Block-Step Engine</strong>. Ao utilizar nosso site, baixar o software Block-Step Studio ou interagir com nossos serviços, você concorda formalmente com os termos detalhados abaixo. Caso não concorde com qualquer parte deste documento, o uso da plataforma deve ser interrompido imediatamente.</p>
+
+                <h3>1. OBJETO E FUNCIONALIDADE</h3>
+                <p>A Block-Step Engine é uma plataforma dedicada ao ensino de lógica, geometria e desenvolvimento de ambientes baseados em blocos. O serviço é oferecido "como está", podendo sofrer atualizações, modificações ou interrupções para manutenção sem aviso prévio.</p>
+
+                <h3>2. CONDUTA DO USUÁRIO E RESTRIÇÕES</h3>
+                <p>Para manter um ambiente seguro e focado na educação, aplicamos uma política de <span class="proibido">TOLERÂNCIA ZERO</span> contra condutas ilícitas. É terminantemente proibido:</p>
+                <ul>
+                    <li><strong>Upload de Conteúdo Adulto (NSFW):</strong> A publicação de imagens, modelos ou descrições de natureza sexual, erótica ou explícita resultará em banimento imediato e permanente.</li>
+                    <li><strong>Pirataria e Direitos Autorais:</strong> É proibido utilizar a engine para distribuir softwares protegidos por direitos autorais ("cracks", chaves de ativação) ou assets que não pertençam ao usuário ou não possuam licença de uso.</li>
+                    <li><strong>Abuso Técnico:</strong> O uso de bots, ataques de negação de serviço (DDoS) ou qualquer tentativa de comprometer a integridade do servidor do Shinemaker.</li>
+                    <li><strong>Engenharia Reversa Maliciosa:</strong> Embora o código possa ser estudado para fins de aprendizado, é proibido descompilar o software para criar versões "piratas" ou enganosas da marca original.</li>
+                </ul>
+
+                <h3>3. CONTEÚDO ENVIADO POR USUÁRIOS (ASSETS)</h3>
+                <p>Ao enviar arquivos para a plataforma (quando disponível), o usuário declara que possui todos os direitos sobre o material. A Block-Step Engine não se responsabiliza pelo conteúdo gerado por terceiros, mas reserva-se o direito de remover qualquer arquivo que considere prejudicial à imagem da marca ou que viole o Artigo 2 deste documento.</p>
+
+                <h3>4. PROPRIEDADE INTELECTUAL</h3>
+                <p>Todos os elementos visuais, código-fonte proprietário e marcas são de propriedade exclusiva de <strong>Shinemaker / Luiz Miguel</strong>. A licença MIT aplicada ao código aberto no GitHub não se estende aos direitos de marca (naming rights) e logotipos da Block-Step Engine.</p>
+
+                <h3>5. PENALIDADES</h3>
+                <p>A violação destes termos pode acarretar em:
+                    <br>a) Remoção imediata do conteúdo infrator;
+                    <br>b) Bloqueio de endereço IP para acesso ao site e downloads;
+                    <br>c) Notificações judiciais em casos de pirataria severa ou ataques cibernéticos.
+                </p>
+
+                <h3>6. CONDUTA E AMBIENTE COMUNITÁRIO</h3>
+                <p>A Block-Step Engine é um ambiente de desenvolvimento e aprendizado sério. Para preservar a saúde mental de nossos desenvolvedores e usuários, estabelecemos que:</p>
+                <ul>
+                    <li><strong>Proibição de Toxicidade:</strong> É terminantemente proibida a prática de "ignorância" proposital, comportamento passivo-agressivo ou manipulação de informações entre membros da comunidade.</li>
+                    <li><strong>Controle de Memes e Spam:</strong> Não é permitido o uso de memes, "shitposting" ou comportamentos infantis que desvirtuem o propósito técnico da plataforma. O foco deve ser sempre o progresso tecnológico e o respeito mútuo.</li>
+                    <li><strong>Comportamento Ético:</strong> Usuários que demonstrarem comportamento tóxico recorrente serão removidos, visando manter o projeto livre de negatividade externa.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="grid-container">
+            <div class="footer-flex">
+                <div class="footer-links">
+                    <a href="mailto:contato.luiz404@gmail.com">Contate-nos</a> <span>|</span>
+                    <a href="privacidade.html">Privacidade</a> <span>|</span>
+                    <a href="termos.html">Termos de Uso</a> <span>|</span>
+                    <a href="marcas.html">Marcas Registradas</a>
+                </div>
+                <div>© 2026 Block-Step Engine.</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

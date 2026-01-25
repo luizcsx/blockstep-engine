@@ -251,17 +251,23 @@
             </div>
         </div>
     </footer>
+    
     <script>
-    // Verifica se existe um nome de usuário salvo no navegador
-    const user = localStorage.getItem('bse_user');
-    const utilityBar = document.querySelector('.top-utility-flex');
+    // Tenta pegar o nome guardado no navegador
+    const usuarioLogado = localStorage.getItem('bse_user');
+    
+    // Seleciona a barrinha cinza do topo
+    const topBar = document.querySelector('.top-utility-flex');
 
-    if (user) {
-        utilityBar.innerHTML = `Olá, <strong>${user}</strong> | <a href="#" id="logout" style="color:#ddd; text-decoration:none;">Sair</a>`;
+    if (usuarioLogado && topBar) {
+        // Muda o texto da barra para o nome do usuário
+        topBar.innerHTML = `Olá, <strong>${usuarioLogado}</strong> | <a href="#" id="btnSair" style="color: #ddd; text-decoration: none; margin-left: 10px;">Sair</a>`;
         
-        document.getElementById('logout').onclick = () => {
-            localStorage.removeItem('bse_user');
-            window.location.reload();
+        // Função para deslogar
+        document.getElementById('btnSair').onclick = (e) => {
+            e.preventDefault();
+            localStorage.removeItem('bse_user'); // Apaga o nome
+            window.location.reload(); // Recarrega a página
         };
     }
 </script>

@@ -228,41 +228,45 @@
     </footer>
 
     <script>
-        document.getElementById('registroBSE').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const btn = e.target.querySelector('button');
-            btn.innerText = "Processando...";
-            btn.disabled = true;
+    document.getElementById('registroBSE').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const btn = e.target.querySelector('button');
+        btn.innerText = "Processando...";
+        btn.disabled = true;
 
-            const dados = {
-                username: document.getElementById('username').value,
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value
-            };
+        const dados = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value
+        };
 
-            try {
-                const response = await fetch('/api/registrar', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(dados)
-                });
+        try {
+            const response = await fetch('/api/registrar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dados)
+            });
 
-                const resultado = await response.json();
+            const resultado = await response.json();
 
-                if (response.ok) {
-                    alert('Sucesso: ' + resultado.message);
-                    window.location.href = 'index.html'; // Redireciona após sucesso
-                } else {
-                    alert('Erro: ' + resultado.error);
-                }
-            } catch (error) {
-                alert('Erro na conexão com o servidor.');
-            } finally {
-                btn.innerText = "Criar Conta";
-                btn.disabled = false;
+            if (response.ok) {
+                alert('Sucesso: ' + resultado.message);
+                
+                localStorage.setItem('bse_user', dados.username); 
+                // --------------------------------
+                
+                window.location.href = 'index.html'; 
+            } else {
+                alert('Erro: ' + resultado.error);
             }
-        });
-    </script>
+        } catch (error) {
+            alert('Erro na conexão com o servidor. Verifique se a pasta /api existe no GitHub.');
+        } finally {
+            btn.innerText = "Criar Conta";
+            btn.disabled = false;
+        }
+    });
+</script>
 </body>
 </html>

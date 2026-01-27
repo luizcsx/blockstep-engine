@@ -3,274 +3,129 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Block-Step Engine</title>
+    <title>Estamos em manutenção!</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
             font-family: Verdana, Geneva, sans-serif; 
             background-color: #fff; 
-            color: #555;  
-            font-size: 13px;
-            line-height: 1.4;
-            overflow-x: hidden;
-        }
-      
-        .grid-container {
-            width: 100%;
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 0 20px;
+            color: #444;  
+            font-size: 14px;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        .top-utility {
-            background-color: #444;
-            color: #ddd;
-            font-size: 11px;
-            padding: 6px 0;
-            width: 100%;
-        }
-        .top-utility-flex {
-            display: flex;
-            justify-content: flex-end;
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            padding: 40px 20px;
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 0;
+            margin-bottom: 40px;
         }
         .logo {
-            font-size: 28px;
+            font-size: 32px;
             color: #777;
             font-weight: 500;
             letter-spacing: -1px;
             text-decoration: none;
         }
-        .logo span { color: #b74d4d; font-weight: 700; }
-        
-        .search-box input {
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            width: 220px;
-            outline: none;
-            font-size: 12px;
+        .logo span { color: #942424; font-weight: 700; }
+
+        .status-card {
+            border: 1px solid #ddd;
+            background-color: #fcfcfc;
+            padding: 40px;
+            border-radius: 4px;
         }
 
-        nav {
-            background-color: #f2f2f2;
-            border-bottom: 1px solid #e5e5e5;
-            width: 100%;
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 400;
         }
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        .nav-links a {
-            padding: 12px 20px;
-            text-decoration: none;
+
+        p {
             color: #666;
-            border-right: 1px solid #e5e5e5;
-            display: block;
-            white-space: nowrap;
+            margin-bottom: 25px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .nav-links a:hover { background-color: #fff; color: #000; }
 
-        .hero {
-            background: linear-gradient(to right, #fcfcfc, #f5f5f5);
-            border: 1px solid #e5e5e5;
-            margin: 25px 0;
-            padding: 45px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
         }
-      
-        .hero-content { flex: 1; }
-        .hero-content h2 { 
-            font-size: 32px; 
-            color: #333; 
-            font-weight: 300; 
-            margin-bottom: 15px; 
+        .progress-fill {
+            width: 10%;
+            height: 100%;
+            background: #942424;
         }
-        .hero-content p { font-size: 15px; margin-bottom: 25px; max-width: 500px; }
 
-        .btn-ms {
-            background-color: #eee;
-            border: 1px solid #ccc;
+        .btn-home {
+            display: inline-block;
             padding: 10px 25px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
             color: #333;
             text-decoration: none;
             font-weight: bold;
-            display: inline-block;
+            font-size: 12px;
+            transition: background 0.2s;
         }
-        .btn-ms:after { content: " >"; color: #b74d4d; }
-        .btn-ms:hover { background-color: #e5e5e5; }
-
-        .hero-preview {
-            width: 320px;
-            height: 200px;
-            background-color: #e1f5fe;
-            border: 1px solid #b3e5fc;
-        }
-
-        .main-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-        .main-grid h3 {
-            font-size: 18px;
-            color: #333;
-            font-weight: 400;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-        .main-grid ul { list-style: none; }
-        .main-grid li { margin-bottom: 12px; }
-        .main-grid a { color: #0067b8; text-decoration: none; }
-        .main-grid a:hover { text-decoration: underline; }
+        .btn-home:hover { background-color: #e5e5e5; }
 
         footer {
-            background-color: #f2f2f2;
-            border-top: 1px solid #e5e5e5;
-            padding: 30px 0;
-            color: #888;
+            padding: 20px;
             font-size: 11px;
+            color: #aaa;
+            text-align: center;
         }
-        .footer-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-        }
-        .footer-links a:hover { text-decoration: underline; color: #0067b8; }
-        .footer-links span { color: #ccc; margin: 0 5px; }
 
-        @media (max-width: 850px) {
-            header { flex-direction: column; gap: 15px; text-align: center; }
-            .search-box { width: 100%; }
-            .search-box input { width: 100%; }
-            
-            .hero { flex-direction: column; text-align: center; padding: 25px; }
-            .hero-preview { width: 100%; height: 160px; order: -1; }
-            
-            .main-grid { grid-template-columns: 1fr; gap: 30px; }
-            
-            .footer-flex { flex-direction: column; text-align: center; gap: 15px; }
-            .nav-links { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        /* RESPONSIVIDADE TOTAL */
+        @media (max-width: 600px) {
+            .status-card { padding: 25px; }
+            h1 { font-size: 20px; }
+            .logo { font-size: 26px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-utility">
-        <div class="top-utility-flex">
-            Idioma: Português (Brasil)
-        </div>
-    </div>
-
-    <div class="grid-container">
+    <div class="container">
         <header>
-            <a href="index.html" class="logo">Block-Step <span>Engine</span></a>
-            <div class="search-box">
-                <input type="text" placeholder="Pesquisar no site...">
-            </div>
+            <div class="logo">Block-Step <span>Engine</span></div>
         </header>
-    </div>
 
-    <nav>
-        <div class="grid-container">
-            <ul class="nav-links">
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="aprendizado.html">Aprendizado</a></li>
-                <li><a href="programacao.html">Programação</a></li>
-                <li><a href="matematica.html">Matemática</a></li>
-                <li><a href="info.html">Sobre</a></li>
-                <li><a href="downloads.html">Downloads</a></li>
-            </ul>
-        </div>
-    </nav>
+        <main class="status-card">
+            <h1>Estamos em Manutenção</h1>
+            <p>Entramos em manutenção para atualizar algumas coisas. Por favor, volte em breve!</p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
 
-    <div class="grid-container">
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Experimente a lógica de blocos</h2>
-                <p>A plataforma online para explorar os fundamentos da computação e geometria espacial de forma prática.</p>
-                <a href="#" class="btn-ms">Começar agora</a>
-            </div>
-            <div class="hero-preview"></div>
-        </section>
-
-        <main class="main-grid">
-            <div class="col">
-                <h3>Suporte ao Aluno</h3>
-                <ul>
-                    <li><a href="#">Como criar seu primeiro bloco</a></li>
-                    <li><a href="#">Guia de lógica booleana</a></li>
-                    <li><a href="#">Solução de problemas comuns</a></li>
-                </ul>
-            </div>
-            <div class="col">
-                <h3>Downloads Populares</h3>
-                <ul>
-                    <li><a href="#">Módulo de Geometria v1.2</a></li>
-                    <li><a href="#">Kit de Documentação Alpha</a></li>
-                    <li><a href="#">Exemplos de Códigos Fonte</a></li>
-                </ul>
-            </div>
-            <div class="col">
-                <h3>Últimas Notícias</h3>
-                <p>Lançamos o <strong>Block-Step Engine</strong>, uma plataforma sobre matemática, programação, aprendizagem, entre outros.</p>
-                <a href="#" style="font-size: 11px; margin-top: 10px; display: block;">Ver todas as novidades</a>
-            </div>
+            <p style="font-size: 12px; font-style: italic;">Feito por Luiz Miguel.</p>
+            
+            <a href="mailto:contato.luiz404@gmail.com" class="btn-home">SUPORTE</a>
         </main>
     </div>
 
     <footer>
-        <div class="grid-container">
-            <div class="footer-flex">
-                <div class="footer-links">
-                    <a href="mailto:contato.luiz404@gmail.com">Contate-nos</a> <span>|</span>
-                    <a href="privacidade.html">Privacidade</a> <span>|</span>
-                    <a href="termos.html">Termos de Uso</a> <span>|</span>
-                    <a href="marcas.html">Marcas Registradas</a>
-                </div>
-                <div>
-                    © 2026 Block-Step Engine.
-                </div>
-            </div>
-        </div>
+        © 2026 Block-Step Foundation | Em breve novidades.
     </footer>
-    
-    <script>
-    // Tenta pegar o nome guardado no navegador
-    const usuarioLogado = localStorage.getItem('bse_user');
-    
-    // Seleciona a barrinha cinza do topo
-    const topBar = document.querySelector('.top-utility-flex');
-
-    if (usuarioLogado && topBar) {
-        // Muda o texto da barra para o nome do usuário
-        topBar.innerHTML = `Olá, <strong>${usuarioLogado}</strong> | <a href="#" id="btnSair" style="color: #ddd; text-decoration: none; margin-left: 10px;">Sair</a>`;
-        
-        // Função para deslogar
-        document.getElementById('btnSair').onclick = (e) => {
-            e.preventDefault();
-            localStorage.removeItem('bse_user'); // Apaga o nome
-            window.location.reload(); // Recarrega a página
-        };
-    }
-</script>
 
 </body>
 </html>

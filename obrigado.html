@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block-Step Engine - Enviado com Sucesso</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    
+    <style>
+        :root {
+            --primary-green: #2d8a37;
+            --bg-gradient-start: #e8f5e9;
+            --bg-gradient-end: #ffffff;
+            --text-dark: #333;
+            --border-color: #ccd5cc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: linear-gradient(90deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #header {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #banner-area {
+            width: 100%;
+            height: 120px;
+            background-color: #fff;
+            background-image: url('header2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 1px solid var(--border-color);
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        #main-container {
+            width: 95%;
+            max-width: 900px;
+            border: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .section-block {
+            border-bottom: 1px solid #eeeeee;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        h3 { font-size: 26px; color: var(--text-dark); margin: 10px 0; }
+        h6 { font-size: 11px; color: #888; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .success-icon {
+            font-size: 50px;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .link-back { 
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--primary-green); 
+            text-decoration: none; 
+            font-weight: bold; 
+            border: 1px solid var(--primary-green);
+            padding: 10px 20px;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .link-back:hover { 
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        footer {
+            margin-top: auto;
+            margin-bottom: 30px;
+            color: #889988;
+            font-size: 11px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div id="header">
+        <div id="banner-area"></div>
+    </div>
+
+    <div id="main-container">
+        <div class="section-block">
+            <div class="success-icon">✔️</div>
+            <h6>CONFIRMAÇÃO</h6>
+            <h3>Enviado com sucesso!</h3>
+            <p style="margin-top:15px; font-size: 14px; color: #555;">
+                Obrigado por contribuir com a <b>Block-Step Foundation</b>.<br> 
+                Suas informações para a criação de conta estão sendo processadas.
+            </p>
+            
+            <a href="index.html" class="link-back">VOLTAR PARA O INÍCIO</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Block-Step Foundation.
+    </footer>
+
+</body>
+</html>

@@ -3,40 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block-Step Engine - 2000 Blockies</title>
+    <title>Block-Step Engine - Recompensa Desbloqueada</title>
     <link rel="icon" type="image/png" href="icon.png">
+    
     <style>
         :root {
             --primary-green: #2d8a37;
             --bg-gradient-start: #e8f5e9;
             --bg-gradient-end: #ffffff;
+            --text-dark: #333;
             --border-color: #ccd5cc;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             background: linear-gradient(90deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
+        }
+
+        #header {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 50px;
             text-align: center;
         }
 
-        #reward-box {
-            background: white;
-            padding: 40px;
+        #banner-area {
+            width: 100%;
+            height: 120px;
+            background-color: #fff;
+            background-image: url('header2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 500px;
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
+        #main-container {
+            width: 95%;
+            max-width: 900px;
+            border: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .section-block {
+            border-bottom: 1px solid #eeeeee;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .section-block:last-child { border-bottom: none; }
+
         .coin-icon { font-size: 50px; margin-bottom: 10px; }
-        
         hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+
+        h3 { font-size: 26px; color: var(--text-dark); margin: 10px 0; }
+        h6 { font-size: 11px; color: #888; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
 
         .amount { 
             font-size: 48px; 
@@ -47,62 +82,91 @@
         }
 
         .promo-code {
-            background: #f4f4f4;
+            background: #f9f9f9;
             padding: 15px;
             border: 1px dashed var(--primary-green);
             border-radius: 4px;
-            font-family: Verdana, Geneva, Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             font-size: 20px;
             font-weight: bold;
             color: #333;
-            margin: 20px 0;
+            margin: 20px auto;
             display: block;
+            max-width: 300px;
         }
 
-        h2 { margin: 10px 0; color: #333; }
-        p { color: #666; font-size: 14px; line-height: 1.5; }
-        .warning { color: #d93025; font-weight: bold; font-size: 12px; margin-top: 10px; }
+        .warning { color: #d93025; font-weight: bold; font-size: 12px; margin-top: 15px; line-height: 1.4; }
 
-        .btn-claim {
-            margin-top: 25px;
+        .btn-back {
             display: inline-block;
-            background: var(--primary-green);
+            background-color: var(--primary-green);
             color: white;
-            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 4px;
+            padding: 12px 25px;
+            margin-top: 25px;
             font-weight: bold;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        footer {
+            margin-top: auto;
+            margin-bottom: 30px;
+            color: #889988;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            #header { margin-top: 20px; }
+            #banner-area { height: 90px; }
         }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
-    <div id="reward-box">
-        <div class="coin-icon">💎</div>
-        <hr>
-        
-        <h2>Bônus de Explorador</h2>
-        <span class="amount">2000</span>
-        
-        <p>Você encontrou a página secreta! Use o código abaixo para resgatar seus <b>Blockies</b> no lançamento.</p>
-
-        <span class="promo-code" id="resgate-code">GERANDO...</span>
-
-        <p class="warning">⚠️ IMPORTANTE: Anote este código agora! Ele é gerado aleatoriamente e mudará ao sair desta página. Após o lançamento da Block-Step Engine, você terá 30 dias para validar seu resgate.</p>
-
-        <a href="index.html" class="btn-claim">VOLTAR PARA O INÍCIO</a>
+    <div id="header">
+        <div id="banner-area"></div>
     </div>
+
+    <div id="main-container">
+        <div class="section-block">
+            <div class="coin-icon">💎</div>
+            <hr>
+            <h6>CONQUISTA SECRETA</h6>
+            <h3>Bônus de Explorador</h3>
+            
+            <span class="amount">2000</span>
+            
+            <p style="font-size: 14px; color: #555;">
+                Você encontrou a nossa página secreta! Use o código abaixo para resgatar seus <b>Blockies</b> no lançamento.
+            </p>
+
+            <span class="promo-code" id="resgate-code">GERANDO...</span>
+
+            <p class="warning">
+                ⚠️ IMPORTANTE: Anote este código agora! Ele é gerado aleatoriamente e mudará ao sair desta <br>página.
+                Após o lançamento da Engine, você terá 30 dias para validar seu resgate.
+            </p>
+        
+            <a href="index.html" class="btn-back">Voltar para a Base</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Block-Step Foundation.
+    </footer>
 
     <script>
         function gerarCodigo() {
             const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
             let randomPart = '';
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 8; i++) {
                 randomPart += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
             }
-            return `ITA-${randomPart}-2K`;
+            return `ITA-${randomPart}-2026`;
         }
-
         document.getElementById('resgate-code').innerText = gerarCodigo();
     </script>
 

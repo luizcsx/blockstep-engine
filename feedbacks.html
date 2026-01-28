@@ -118,11 +118,17 @@
             <h3>Feedback & Suporte</h3>
             <p style="color: #666; font-size: 14px;">Sua opinião ajuda a construir a Block-Step Engine. Relate bugs ou sugira melhorias.</p>
             
-            <form action="mailto:contato.luiz404@gmail.com" method="POST" enctype="text/plain">
-                <input type="text" name="assunto" placeholder="Título do assunto" required>
-                <textarea name="mensagem" placeholder="Descreva seu feedback em detalhes..." required></textarea>
-                <input type="submit" value="ENVIAR FEEDBACK">
-            </form>
+            <form action="https://formsubmit.co/contato.luiz404@gmail.com" method="POST">
+    
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://seusite.vercel.app/obrigado.html">
+    <input type="hidden" name="_subject" value="Novo Feedback - Block-Step Engine">
+
+    <input type="text" name="assunto" placeholder="Título do assunto" required>
+    <textarea name="mensagem" placeholder="Descreva seu feedback em detalhes..." required></textarea>
+    
+    <input type="submit" value="ENVIAR FEEDBACK">
+</form>
 
             <a href="index.html" class="back-link">← Voltar para a página inicial</a>
         </div>
